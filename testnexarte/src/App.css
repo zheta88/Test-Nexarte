@@ -1,9 +1,9 @@
 .button{
-  margin-top: 50px;
-  background-color: rgb(88, 204, 68);
+  margin-top: 30px;
+  background-color: rgb(204, 68, 136);
   width: 20%;
-  margin-left: 300px;
-  margin-bottom:10px;
+  left:10%;
+  position: relative;
 }
 
 .input{
@@ -46,3 +46,18 @@
   margin-top: 0px;
 }
 
+html { 
+  background: url(https://midu.dev/images/wallpapers/una-taza-de-javascript.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+}
+
+.App{
+
+  background-color: transparent;
+  position: absolute;
+  width: 80%;
+}

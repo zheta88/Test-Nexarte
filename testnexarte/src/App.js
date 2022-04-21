@@ -71,49 +71,81 @@ export class App extends Component{
   }
   unirArrays =()=>{
     this.arrayDeNumeros = [[1, 2], [3, 4], [5, 6]]; 
+    this.arrayDeNumerosNuevo = this.arrayDeNumeros.join();
+    console.log(this.arrayDeNumerosNuevo);
     
   }
-
+  
   render(){
     return (
-      <div className="App">
-        <div className="card">
-        <h5 className="card-header">Ejercicio 1</h5>
-          <div className="form-group">
-            <select className="custom-select" onChange={event => this.setState({...this.state,operacion:event.target.value})}>
-            <option value="0">Elija Operacion</option>
-              <option value="1">Sumar</option>
-              <option value="2">Restar</option>
-              <option value="3">Multiplicar</option>
-              <option value="4">Dividir</option>
-            </select>
+    <div className="App">
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Ejercicio 1
+              </button>
+            </h5>
           </div>
-          <input className="input" type="number" value={this.state.operando1} onChange={(event) => this.onInputChange('operando1',event.target.value)}/>
-          <input className="input" type="number" value={this.state.operando2} onChange={(event) => this.onInputChange('operando2',event.target.value)}/>
-          <span id="res">{this.resultado}</span>
-          <button className="button" onClick={this.calcular}>Calcular</button>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <div >
+                <div className="form-group">
+                  <select className="custom-select" onChange={event => this.setState({...this.state,operacion:event.target.value})}>
+                  <option value="0">Elija Operacion</option>
+                    <option value="1">Sumar</option>
+                    <option value="2">Restar</option>
+                    <option value="3">Multiplicar</option>
+                    <option value="4">Dividir</option>
+                  </select>
+                </div>
+                <input className="input" type="number" value={this.state.operando1} onChange={(event) => this.onInputChange('operando1',event.target.value)}/>
+                <input className="input" type="number" value={this.state.operando2} onChange={(event) => this.onInputChange('operando2',event.target.value)}/>
+                <span id="res">{this.resultado}</span>
+                <button className="button" onClick={this.calcular}>Calcular</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+               Ejercicio 2
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div className="card-body">
+              <h5 className="card-title">Listado de ciudades en orden de repeticiones:</h5>
+              <p className="card-text"></p>
+              <ul>
+                {this.listaCiudadesNuevo.map((item,idx) => <li key={idx}>{item}</li>)}
+              </ul>
+            </div>
+          </div>
         </div>
         <div className="card">
-          <h5 className="card-header">Ejercicio 2</h5>
-          <div className="card-body">
-            <h5 className="card-title">Listado de ciudades en orden de repeticiones:</h5>
-            <p className="card-text"></p>
-            <ul>
-              {this.listaCiudadesNuevo.map((item,idx) => <li key={idx}>{item}</li>)}
-            </ul>
+          <div className="card-header" id="headingThree">
+            <h5 className="mb-0">
+              <button className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Ejercicio 3
+              </button>
+            </h5>
           </div>
-        </div>
-        <div className="card">
-          <h5 className="card-header">Ejercicio 3</h5>
-          <div className="card-body">
+          <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div className="card-body">
             <h5 className="card-title">Arreglo unificado</h5>
             <p className="card-text"></p>
             <ul>
-              {this.listaCiudadesNuevo.map((item,idx) => <li key={idx}>{item}</li>)}
+             [{this.arrayDeNumerosNuevo}]
             </ul>
+            </div>
           </div>
         </div>
-        
+      </div>
       </div>
       
 
