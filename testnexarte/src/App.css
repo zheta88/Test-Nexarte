@@ -21,12 +21,13 @@
   height: 40%;
   margin-left: 300px;
   margin-top: 100px;
-  padding-top: 10px;
+  padding-top: 0px;
   background-color:lightblue;
 }
 .custom-select{
   width: 50%;
   margin-left: 200px;
+  margin-top: 10px;
 }
 
 #res{
@@ -37,4 +38,11 @@
   
 }
 
+.card-header{
+  text-align: center;
+  padding-bottom: 10px;
+  background-color: bisque;
+  padding-top: 0px;
+  margin-top: 0px;
+}
 
